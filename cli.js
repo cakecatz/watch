@@ -5,7 +5,7 @@ var execshell = require('exec-sh')
 var watch = require('./main.js')
 
 if(argv._.length === 0) {
-  console.error('Usage: watch <command> [...directory] [--wait=<seconds>] [--ignoreDotFiles] [--ignoreUnreadable]')
+  console.error('Usage: watch <command> [...directory] [--wait=<milliseconds>] [--ignoreDotFiles] [--ignoreUnreadable]')
   process.exit()
 }
 
@@ -51,7 +51,7 @@ for(i = 0; i < dirLen; i++) {
       wait = true
       setTimeout(function () {
         wait = false
-      }, waitTime * 1000)
+      }, waitTime)
     }
   })
 }
